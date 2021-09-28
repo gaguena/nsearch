@@ -1,4 +1,4 @@
-import App from './src/index'
+import App from './src/app'
 import CompanyController from './src/controller/company-controller'
 import dotenv from 'dotenv'
 
