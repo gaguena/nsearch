@@ -9,7 +9,6 @@ class CompanyService {
     } catch(err) {
       throw err;
     }
-
   }
 }
 

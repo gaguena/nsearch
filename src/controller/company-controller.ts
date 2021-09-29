@@ -19,7 +19,6 @@ class CompanyController {
     try {
       var document = new Number(request.params.document)
       var data = await this.companyService.findBy(document)
-      console.log(data)
       response.send(data)
     } catch(err) {
 
