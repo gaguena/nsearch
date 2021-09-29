@@ -1,9 +1,11 @@
 import * as express from 'express';
+import CompanyService from '../service/company-service'
 
 class CompanyController {
 
   private path = '/companys';
   private router = express.Router()
+  private companyService = new CompanyService()
 
   constructor() {
     this.intializeRoutes()
@@ -13,7 +15,14 @@ class CompanyController {
     this.router.get(`${this.path}/:document`, this.findCompany)
   }
 
-  findCompany = (request: express.Request, response: express.Response) => {
+  findCompany = async (request: express.Request, response: express.Response) => {
+    try {
+      var document = new Number(request.params.document)
+      var data = await this.companyService.findBy(document)
+      response.send(data)
+    } catch(err) {
+
+    }
 
   }
 }
